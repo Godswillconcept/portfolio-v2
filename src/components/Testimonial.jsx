@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 
 import { HiChevronLeft, HiChevronRight } from "react-icons/hi2";
+import { ImQuotesLeft, ImQuotesRight } from "react-icons/im";
 
 const Testimonial = () => {
   const [slideIndex, setSlideIndex] = useState(0);
@@ -98,14 +99,20 @@ const Testimonial = () => {
                   />
                 </div>
               </div>
-              <div className="flex flex-col flex-grow w-3/5">
-                <h3 className="text-3xl font-semibold mt-6 mb-2">
+              <div className="flex flex-col flex-grow md:w-3/5 w-full">
+                <h3 className="lg:text-3xl md:text-2xl sm:text-xl text-base font-semibold mt-6 mb-2">
                   {testimonial.name}
                 </h3>
-                <h4 className="text-base italic">{testimonial.title}</h4>
-                <p className="text-gray-600 text-center mt-6">
-                  {testimonial.review}
-                </p>
+                <h4 className="md:text-base text-sm lg:text-lg italic">
+                  {testimonial.title}
+                </h4>
+                <div>
+                  <ImQuotesLeft className="me-2" fontSize={25} />
+                  <h3 className="my-2 text-black text-start md:text-base text-sm inline-block">
+                    {testimonial.review}
+                  </h3>
+                  <ImQuotesRight className="ms-2 float-right" fontSize={25} />
+                </div>
               </div>
             </div>
           ))}

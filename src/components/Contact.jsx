@@ -4,13 +4,13 @@ import React from "react";
 const Contact = () => {
   return (
     <section className="flex flex-col items-center justify-center py-16" id="contact">
-      <h2 className="text-4xl font-bold text-orange-600 mb-12">
+      <h2 className="lg:text-3xl md:text-2xl sm:text-xl text-lg font-bold text-orange-600 mb-12">
         Let's Get In Touch
       </h2>
       <form className="w-3/5">
         <div className="flex flex-col md:flex-row gap-4">
           <div className="w-full md:w-1/3">
-            <label htmlFor="name" className="block text-lg font-semibold mb-2">
+            <label htmlFor="name" className="block md:text-lg text-base font-semibold mb-2">
               Name
             </label>
             <input
@@ -22,7 +22,7 @@ const Contact = () => {
             />
           </div>
           <div className="w-full md:w-2/3">
-            <label htmlFor="email" className="block text-lg font-semibold mb-2">
+            <label htmlFor="email" className="block md:text-lg text-base font-semibold mb-2">
               Email
             </label>
             <input
@@ -34,7 +34,7 @@ const Contact = () => {
             />
           </div>
         </div>
-        <label htmlFor="message" className="block text-lg font-semibold mb-2">
+        <label htmlFor="message" className="block md:text-lg text-base font-semibold my-2">
           Message   
         </label>
         <textarea

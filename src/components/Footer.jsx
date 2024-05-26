@@ -2,7 +2,7 @@ import React from "react";
 
 const Footer = () => {
   return (
-    <footer className="bg-gray-800 pt-[25px] pb-[25px] px-[71px]">
+    <footer className="bg-gray-800 pt-[25px] pb-[25px] px-[50px]">
       <div className="flex justify-between items-center mb-[25px]">
         <h2 className="text-white lg:text-5xl md:text-4xl sm:text-3xl text-2xl leading-[83.53px] font-semibold">
           Let’s Connect there

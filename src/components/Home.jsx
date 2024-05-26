@@ -11,7 +11,7 @@ const Home = () => {
         <span className="inline-block border-2 border-orange-600 px-3 py-1 rounded-full mb-4">
           Hello!
         </span>
-        <h1 className="text-4xl font-bold">
+        <h1 className="lg:text-4xl md:text-3xl sm:text-2xl text-xl font-bold">
           I’m <span className="text-orange-500">Olatunji Abass,</span>
           <span className="block my-4">Fullstack Developer</span>
         </h1>
@@ -20,7 +20,7 @@ const Home = () => {
             {/* profile brief  */}
             <div className="mb-12 text-center">
               <ImQuotesLeft className="me-2" fontSize={25} />
-              <h3 className="my-2 text-black text-start text-xl inline-block font-bold">
+              <h3 className="my-2 text-black text-start lg:text-xl md:text-lg sm:text-base text-sm inline-block font-bold">
                 Building web apps with React, Node.js, and SQL. Detail-oriented, user-focused, and passionate about delivering high-quality solutions.
               </h3>
               

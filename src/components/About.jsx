@@ -69,42 +69,42 @@ const About = () => {
     <section className="bg-gray-200" id="about">
       <div className="md:grid md:grid-cols-2 md:gap-6 md:px-12 px-2 py-20 ">
         <div className="md:col-span-1">
-          <div className="mt-10">
-            <div>
-              <p className="text-xl text-black mb-4">
+          <div className="mb-12">
+            <div className="px-12 sm:px-0">
+              <p className="lg:text-xl md:text-xl sm:text-lg text-base text-black mb-4">
                 With over{" "}
                 <span className="text-orange-500 font-bold">3 years</span> of
                 working experience as a web designers & developer, I'm a
                 frontend developer with a passion for building digital products
                 that are user-friendly, scalable and of high quality.
               </p>
-              <p className="text-xl text-black mb-4">
+              <p className="lg:text-xl md:text-xl sm:text-lg text-base text-black mb-4">
                 As a frontend developer, I've worked with a range of
                 technologies including HTML, CSS, JavaScript, React, Node.js,
                 Express, SQL, and more. I'm always confident, naturally curious,
                 and working on improving my workpace on timely basis.
               </p>
             </div>
-            <div className="space-y-5">
-              <h3 className="text-2xl text-black font-bold mt-6 mb-2">
+            <div className="space-y-5 px-12 sm:px-0">
+              <h3 className="lg:text-2xl md:text-xl sm:text-lg text-base font-bold mt-6 mb-2">
                 What I Offer
               </h3>
               <ul className="list-none">
-                <li className="text-lg text-black font-medium">
+                <li className="lg:text-lg md:text-base text-sm text-black font-medium">
                   <HiMiniCheckBadge
                     fontSize={30}
                     className="inline-block text-orange-500"
                   />{" "}
                   Affordable prices
                 </li>
-                <li className="text-lg text-black font-medium">
+                <li className="lg:text-lg md:text-base text-sm text-black font-medium">
                   <HiMiniCheckBadge
                     fontSize={30}
                     className="inline-block text-orange-500"
                   />{" "}
                   High quality product
                 </li>
-                <li className="text-lg text-black font-medium">
+                <li className="lg:text-lg md:text-base text-sm text-black font-medium">
                   <HiMiniCheckBadge
                     fontSize={30}
                     className="inline-block text-orange-500"
@@ -115,7 +115,7 @@ const About = () => {
             </div>
           </div>
         </div>
-        <div>
+        <div className="px-12 sm:px-0">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 px-4">
             {projects.map((project, i) => (
               <div
@@ -144,12 +144,12 @@ const About = () => {
             ))}
           </div>
           <div>
-            <h3 className="text-2xl text-gray-800 font-bold mt-6 mb-2">
+            <h3 className="lg:text-2xl md:text-xl sm:text-lg text-base text-gray-800 font-bold mt-6 mb-2">
               Some Of My Projects
             </h3>
             <ul className="list-none">
               {projects.map((project, i) => (
-                <li key={i} className="text-lg text-black">
+                <li key={i} className="lg:text-lg md:text-base text-sm font-medium text-black">
                   <HiMiniCheckBadge
                     fontSize={30}
                     className="inline-block text-orange-500"

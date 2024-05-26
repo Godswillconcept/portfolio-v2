@@ -64,7 +64,7 @@ const Experience = () => {
   return (
     <section className="bg-white py-12 shadow-lg" id="experience">
       <div className="container mx-auto px-4">
-        <h2 className="text-3xl font-bold mb-12 text-center">My <span className="text-orange-600">Work</span> Experience</h2>
+        <h2 className="md:text-3xl sm:text-2xl text-xl font-bold mb-12 text-center">My <span className="text-orange-600">Work</span> Experience</h2>
         <div className="grid md:grid-cols-2 grid-cols-1 gap-y-4">
 
         <ol className="relative border-s border-gray-200 dark:border-gray-700">
@@ -81,26 +81,26 @@ const Experience = () => {
                   <path d="M20 4a2 2 0 0 0-2-2h-2V1a1 1 0 0 0-2 0v1h-3V1a1 1 0 0 0-2 0v1H6V1a1 1 0 0 0-2 0v1H2a2 2 0 0 0-2 2v2h20V4ZM0 18a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8H0v10Zm5-8h10a1 1 0 0 1 0 2H5a1 1 0 0 1 0-2Z" />
                 </svg>
               </span>
-              <h3 className="mb-1 text-lg font-semibold text-gray-900 dark:text-white">
+              <h3 className="mb-1 md:text-lg sm:text-base text-sm font-semibold text-gray-900 dark:text-white">
                 {job.jobTitle}
               </h3>
-              <p className="text-base font-normal text-gray-500 dark:text-gray-400">
+              <p className="md:text-base text-sm font-normal text-gray-500 dark:text-gray-400">
                 {job.company} | {job.timePeriod}
               </p>
-              <p className="text-base font-normal text-gray-500 dark:text-gray-400">
+              <p className="md:text-base text-sm font-normal text-gray-500 dark:text-gray-400">
                 {job.jobDescription}
               </p>
             </li>
           ))}
         </ol>
         <div className="mx-12">
-          <h2 className="text-3xl font-bold mb-6">Education and Certifications</h2>
+          <h2 className="md:text-3xl sm:text-2xl text-xl font-bold mb-6"><span className="text-orange-600">Education</span> and Certifications</h2>
           {educationAndCertifications.map((certification, index) => (
             <div key={index} className="mb-4">
-              <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
+              <h3 className="md:text-lg sm:text-base text-sm font-semibold text-gray-900 dark:text-white">
                 {certification.degree || certification.certificationName}
               </h3>
-              <p className="text-base font-normal text-gray-500 dark:text-gray-400">
+              <p className="md:text-base text-sm font-normal text-gray-500 dark:text-gray-400">
                 {certification.institution || certification.certificationIssuingBody} | {certification.timePeriod || certification.certificationDate}
               </p>
             </div>
