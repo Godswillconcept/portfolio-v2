@@ -94,7 +94,7 @@ const Experience = () => {
           ))}
         </ol>
         <div className="mx-12">
-          <h2 className="md:text-3xl sm:text-2xl text-xl font-bold mb-6"><span className="text-orange-600">Education</span> and Certifications</h2>
+          <h2 className="md:text-3xl sm:text-2xl text-xl font-bold mb-6"><span className="text-orange-600">Education</span> & Certifications</h2>
           {educationAndCertifications.map((certification, index) => (
             <div key={index} className="mb-4">
               <h3 className="md:text-lg sm:text-base text-sm font-semibold text-gray-900 dark:text-white">
