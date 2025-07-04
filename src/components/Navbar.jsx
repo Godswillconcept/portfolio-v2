@@ -62,7 +62,7 @@ const Navbar = () => {
         </div>
         <div className="hidden md:block space-x-1">
           <a
-            href="https://www.facebook.com/olatunjiabass01"
+            href="https://www.facebook.com/ishaq.a.adewale"
             target="_blank"
             rel="noopener noreferrer"
           >
