@@ -1,4 +1,3 @@
-/* eslint-disable no-self-assign */
 import React, { useState } from "react";
 import {
   BsEnvelope,
