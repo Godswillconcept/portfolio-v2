@@ -4,32 +4,27 @@ import { testimonials } from "../../content/profile";
 
 export default function TestimonialSection() {
   const [activeIndex, setActiveIndex] = useState(0);
-  const [isTransitioning, setIsTransitioning] = useState(false);
-  const [isPaused, setIsPaused] = useState(false);
+  const [isPaused, setIsPaused]       = useState(false);
   const intervalRef = useRef(null);
   const total = testimonials.length;
 
   const goTo = useCallback(
     (index) => {
-      if (isTransitioning) return;
-      setIsTransitioning(true);
       setActiveIndex((index + total) % total);
-      setTimeout(() => setIsTransitioning(false), 500);
     },
-    [isTransitioning, total]
+    [total]
   );
 
   const goNext = useCallback(() => goTo(activeIndex + 1), [activeIndex, goTo]);
   const goPrev = useCallback(() => goTo(activeIndex - 1), [activeIndex, goTo]);
 
-  // Auto-advance every 5 seconds
+  /* Auto-advance every 5 s, pause on hover */
   useEffect(() => {
     if (isPaused) return;
     intervalRef.current = setInterval(goNext, 5000);
     return () => clearInterval(intervalRef.current);
   }, [goNext, isPaused]);
 
-  // Pause on hover
   const handleMouseEnter = () => {
     setIsPaused(true);
     clearInterval(intervalRef.current);
@@ -72,24 +67,18 @@ export default function TestimonialSection() {
         aria-roledescription="carousel"
         aria-label="Client testimonials"
       >
-        {/* Slide track */}
+        {/*
+          CSS Grid stacking: every slide sits in the same grid cell (1/1).
+          All slides are in normal document flow → the grid row height is
+          automatically driven by the TALLEST card. No JS measurement needed.
+        */}
         <div className="testimonials-slide-viewport">
           {testimonials.map((item, index) => {
-            const offset = index - activeIndex;
-            // Only render prev, active, and next for perf
-            const isActive = offset === 0;
-            const isPrev = offset === -1 || (activeIndex === 0 && index === total - 1);
-            const isNext = offset === 1 || (activeIndex === total - 1 && index === 0);
-
-            let stateClass = "ts-hidden";
-            if (isActive) stateClass = "ts-active";
-            else if (isPrev) stateClass = "ts-prev";
-            else if (isNext) stateClass = "ts-next";
-
+            const isActive = index === activeIndex;
             return (
               <article
                 key={item.id}
-                className={`testimonial-card testimonial-slide ${stateClass}`}
+                className={`testimonial-card testimonial-slide${isActive ? " ts-active" : ""}`}
                 aria-hidden={!isActive}
                 role="group"
                 aria-roledescription="slide"
@@ -125,9 +114,8 @@ export default function TestimonialSection() {
           })}
         </div>
 
-        {/* Navigation controls */}
+        {/* Controls: prev | dots | next */}
         <div className="testimonials-controls">
-          {/* Prev button */}
           <button
             className="testimonials-nav-btn"
             onClick={goPrev}
@@ -136,7 +124,6 @@ export default function TestimonialSection() {
             <FiChevronLeft />
           </button>
 
-          {/* Dot indicators */}
           <div className="testimonials-dots" role="tablist" aria-label="Select testimonial">
             {testimonials.map((_, i) => (
               <button
@@ -144,13 +131,12 @@ export default function TestimonialSection() {
                 role="tab"
                 aria-selected={i === activeIndex}
                 aria-label={`Go to testimonial ${i + 1}`}
-                className={`testimonials-dot ${i === activeIndex ? "ts-dot-active" : ""}`}
+                className={`testimonials-dot${i === activeIndex ? " ts-dot-active" : ""}`}
                 onClick={() => goTo(i)}
               />
             ))}
           </div>
 
-          {/* Next button */}
           <button
             className="testimonials-nav-btn"
             onClick={goNext}
@@ -160,9 +146,9 @@ export default function TestimonialSection() {
           </button>
         </div>
 
-        {/* Progress bar */}
+        {/* Progress bar — key resets animation on each slide change */}
         <div
-          className={`testimonials-progress-bar ${isPaused ? "ts-progress-paused" : ""}`}
+          className={`testimonials-progress-bar${isPaused ? " ts-progress-paused" : ""}`}
           key={`${activeIndex}-${isPaused}`}
           aria-hidden="true"
         />

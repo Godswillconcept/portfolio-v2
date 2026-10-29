@@ -666,22 +666,22 @@ body {
   height: 100%;
   z-index: 1;
   display: flex;
-  align-items: flex-end;
+  align-items: stretch;
   justify-content: center;
   border-radius: var(--radius-xl);
   overflow: hidden;
-  background: linear-gradient(180deg, transparent 40%, var(--bg-card) 100%);
+  background: linear-gradient(180deg, transparent 55%, var(--bg-card) 100%);
   border: 1px solid var(--border-subtle);
 }
 
 .portrait-img {
   width: 100%;
-  height: auto;
-  max-height: 500px;
+  height: 100%;
   object-fit: cover;
-  object-position: center top;
+  object-position: center 15%;   /* keep face/head in frame */
   filter: drop-shadow(0 15px 30px rgba(0, 0, 0, 0.4));
   transition: transform 0.4s ease;
+  display: block;
 }
 .portrait-container:hover .portrait-img {
   transform: scale(1.02);
@@ -1926,17 +1926,20 @@ body {
 
 .testimonials-slide-viewport {
   position: relative;
-  min-height: 340px;
-  overflow: visible;
+  display: grid;
+  overflow: hidden;
 }
 
-/* Base slide state */
+/*
+ * Stack every card in the same grid cell. The tallest card establishes the
+ * viewport height, so the carousel stays compact without JS measurements.
+ */
 .testimonial-slide {
-  position: absolute;
-  inset: 0;
+  grid-area: 1 / 1;
+  position: relative;
   width: 100%;
   opacity: 0;
-  transform: translateX(60px) scale(0.97);
+  transform: translateX(40px);
   pointer-events: none;
   transition:
     opacity 0.5s cubic-bezier(0.16, 1, 0.3, 1),
@@ -1947,30 +1950,29 @@ body {
 /* Active slide */
 .testimonial-slide.ts-active {
   opacity: 1;
-  transform: translateX(0) scale(1);
+  transform: translateX(0);
   pointer-events: all;
   z-index: 2;
-  position: relative; /* allow parent height to size to active card */
 }
 
 /* Previous slide (exits left) */
 .testimonial-slide.ts-prev {
   opacity: 0;
-  transform: translateX(-60px) scale(0.97);
+  transform: translateX(-40px);
   z-index: 1;
 }
 
 /* Next slide (waits right) */
 .testimonial-slide.ts-next {
   opacity: 0;
-  transform: translateX(60px) scale(0.97);
+  transform: translateX(40px);
   z-index: 1;
 }
 
 /* Hidden */
 .testimonial-slide.ts-hidden {
   opacity: 0;
-  transform: translateX(60px) scale(0.97);
+  transform: translateX(40px);
   z-index: 0;
 }
 
