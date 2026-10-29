@@ -1423,6 +1423,10 @@ body {
   object-fit: contain;
 }
 
+.tech-brand-icon-svg {
+  color: var(--accent-orange);
+}
+
 .tech-card-info {
   display: flex;
   flex-direction: column;

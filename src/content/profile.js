@@ -18,6 +18,7 @@ import sqlIcon from "../assets/sql.webp";
 import jwtIcon from "../assets/jwt.webp";
 import githubIcon from "../assets/github.webp";
 import figmaIcon from "../assets/figma.webp";
+import { SiDjango, SiPostgresql, SiPython } from "react-icons/si";
 
 export const profile = {
   name: "Olatunji Abass Adewale",
@@ -117,7 +118,10 @@ export const techStack = [
   { name: "Laravel / PHP", category: "Backend", icon: laravelIcon, level: "Proficient" },
   { name: "JavaScript ES6+", category: "Frontend", icon: jsIcon, level: "Advanced" },
   { name: "Tailwind CSS", category: "Frontend", icon: tailwindIcon, level: "Advanced" },
-  { name: "MySQL / PostgreSQL", category: "Database", icon: mysqlIcon, level: "Advanced" },
+  { name: "MySQL", category: "Database", icon: mysqlIcon, level: "Advanced" },
+  { name: "PostgreSQL", category: "Database", iconComponent: SiPostgresql, level: "Working Knowledge" },
+  { name: "Python", category: "Backend", iconComponent: SiPython, level: "Working Knowledge" },
+  { name: "Django", category: "Backend", iconComponent: SiDjango, level: "Developing" },
   { name: "Firebase", category: "Backend", icon: sqlIcon, level: "Auth & Firestore" },
   { name: "JWT Auth & Dio", category: "Security", icon: jwtIcon, level: "Advanced" },
   { name: "HTML5 & CSS3", category: "Frontend", icon: htmlIcon, level: "Advanced" },
@@ -162,7 +166,7 @@ export const services = [
 
 export const capabilities = {
   Mobile: ["Flutter (All 6 Platforms)", "Dart (Advanced)", "Provider & BLoC", "Hive Local Caching", "Dio REST Client", "Firebase Services"],
-  Backend: ["Node.js & Express (MVC)", "PHP & Laravel", "MySQL & PostgreSQL", "RESTful API Design", "JWT Authentication", "DB Migrations"],
+  Backend: ["Node.js & Express (MVC)", "PHP & Laravel", "Python & Django (Developing)", "MySQL & PostgreSQL", "RESTful API Design", "JWT Authentication"],
   Frontend: ["React.js", "JavaScript (ES6+)", "Tailwind CSS", "HTML5 & CSS3", "Bootstrap", "Responsive Web Design"],
   Tooling: ["Git & GitHub (32+ Repos)", "Figma to Code", "Docker & CI/CD", "Vercel Cloud Deploy", "Postman", "TDD Practices"],
 };
