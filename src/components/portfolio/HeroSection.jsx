@@ -1,9 +1,9 @@
 import { FiArrowDown, FiArrowUpRight, FiDownload, FiMapPin } from "react-icons/fi";
 import { FaWhatsapp } from "react-icons/fa";
 import { profile } from "../../content/profile";
-import reactIcon from "../../assets/react.png";
-import flutterIcon from "../../assets/flutter.png";
-import nodeIcon from "../../assets/nodejs.png";
+import reactIcon from "../../assets/react.webp";
+import flutterIcon from "../../assets/flutter.webp";
+import nodeIcon from "../../assets/nodejs.webp";
 
 export default function HeroSection() {
   return (
@@ -85,12 +85,14 @@ export default function HeroSection() {
                 width="480"
                 height="560"
                 loading="eager"
+                decoding="async"
+                fetchPriority="high"
               />
             </div>
 
             {/* Floating Tech Chips */}
             <div className="floating-badge badge-top-right">
-              <img src={flutterIcon} alt="Flutter" className="badge-icon" />
+              <img src={flutterIcon} alt="Flutter" className="badge-icon" width="26" height="26" decoding="async" />
               <div className="badge-info">
                 <strong>Flutter</strong>
                 <span>Mobile Apps</span>
@@ -98,7 +100,7 @@ export default function HeroSection() {
             </div>
 
             <div className="floating-badge badge-mid-left">
-              <img src={reactIcon} alt="React" className="badge-icon" />
+              <img src={reactIcon} alt="React" className="badge-icon" width="26" height="26" decoding="async" />
               <div className="badge-info">
                 <strong>React</strong>
                 <span>Modern Web</span>
@@ -106,7 +108,7 @@ export default function HeroSection() {
             </div>
 
             <div className="floating-badge badge-bottom-right">
-              <img src={nodeIcon} alt="Node.js" className="badge-icon" />
+              <img src={nodeIcon} alt="Node.js" className="badge-icon" width="26" height="26" decoding="async" />
               <div className="badge-info">
                 <strong>Node.js</strong>
                 <span>APIs & Workflows</span>

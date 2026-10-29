@@ -47,7 +47,15 @@ export default function CapabilityGroups() {
         {filteredStack.map((tech) => (
           <div className="tech-item-card" key={tech.name}>
             <div className="tech-icon-box">
-              <img src={tech.icon} alt={tech.name} className="tech-brand-icon" loading="lazy" />
+              <img
+                src={tech.icon}
+                alt={tech.name}
+                className="tech-brand-icon"
+                width="38"
+                height="38"
+                loading="lazy"
+                decoding="async"
+              />
             </div>
             <div className="tech-card-info">
               <span className="tech-card-name">{tech.name}</span>

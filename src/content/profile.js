@@ -1,23 +1,23 @@
-import portrait from "../assets/myself.png";
+import portrait from "../assets/myself.webp";
 import cv from "../assets/abass-cv.pdf";
 
 // Tech stack logo imports
-import reactIcon from "../assets/react.png";
-import nodeIcon from "../assets/nodejs.png";
-import flutterIcon from "../assets/flutter.png";
-import dartIcon from "../assets/dart.png";
-import tailwindIcon from "../assets/tailwindcss.png";
-import jsIcon from "../assets/js.png";
-import htmlIcon from "../assets/html-5.png";
-import cssIcon from "../assets/css.png";
-import expressIcon from "../assets/expressjs.png";
-import laravelIcon from "../assets/laravel.png";
-import phpIcon from "../assets/php.png";
-import mysqlIcon from "../assets/mysql.png";
-import sqlIcon from "../assets/sql.png";
-import jwtIcon from "../assets/jwt.png";
-import githubIcon from "../assets/github.png";
-import figmaIcon from "../assets/figma.png";
+import reactIcon from "../assets/react.webp";
+import nodeIcon from "../assets/nodejs.webp";
+import flutterIcon from "../assets/flutter.webp";
+import dartIcon from "../assets/dart.webp";
+import tailwindIcon from "../assets/tailwindcss.webp";
+import jsIcon from "../assets/js.webp";
+import htmlIcon from "../assets/html-5.webp";
+import cssIcon from "../assets/css.webp";
+import expressIcon from "../assets/expressjs.webp";
+import laravelIcon from "../assets/laravel.webp";
+import phpIcon from "../assets/php.webp";
+import mysqlIcon from "../assets/mysql.webp";
+import sqlIcon from "../assets/sql.webp";
+import jwtIcon from "../assets/jwt.webp";
+import githubIcon from "../assets/github.webp";
+import figmaIcon from "../assets/figma.webp";
 
 export const profile = {
   name: "Olatunji Abass Adewale",

@@ -2,7 +2,7 @@ import React from "react";
 
 import { ImQuotesLeft, ImQuotesRight } from "react-icons/im";
 import { FaAward } from "react-icons/fa6";
-import user from "../assets/myself.png";
+import user from "../assets/myself.webp";
 
 const Home = () => {
   return (
@@ -52,6 +52,8 @@ const Home = () => {
                 src={user} // Replace with the actual path or URL to the image
                 alt="Abass"
                 className="w-full absolute bottom-0 rounded-b-full"
+                loading="lazy"
+                decoding="async"
               />
             </div>
           </div>

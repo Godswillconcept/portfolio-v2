@@ -1,24 +1,24 @@
 import React from "react";
-import html from "../assets/html-5.png";
-import css from "../assets/css.png";
-import bootstrap from "../assets/bootstrap.png";
-import javascript from "../assets/js.png";
-import react from "../assets/react.png";
-import tailwindcss from "../assets/tailwindcss.png";
-import dart from "../assets/dart.png";
-import ejs from "../assets/ejs.png";
-import figma from "../assets/figma.png";
-import flutter from "../assets/flutter.png";
-import jwt from "../assets/jwt.png";
-import nodejs from "../assets/nodejs.png";
-import express from "../assets/expressjs.png";
-import php from "../assets/php.png";
-import laravel from "../assets/laravel.png";
-import mysql from "../assets/mysql.png";
-import sql from "../assets/sql.png";
-import jquery from "../assets/jquery.png";
-import github from "../assets/github.png";
-import gitlab from "../assets/gitlab.png";
+import html from "../assets/html-5.webp";
+import css from "../assets/css.webp";
+import bootstrap from "../assets/bootstrap.webp";
+import javascript from "../assets/js.webp";
+import react from "../assets/react.webp";
+import tailwindcss from "../assets/tailwindcss.webp";
+import dart from "../assets/dart.webp";
+import ejs from "../assets/ejs.webp";
+import figma from "../assets/figma.webp";
+import flutter from "../assets/flutter.webp";
+import jwt from "../assets/jwt.webp";
+import nodejs from "../assets/nodejs.webp";
+import express from "../assets/expressjs.webp";
+import php from "../assets/php.webp";
+import laravel from "../assets/laravel.webp";
+import mysql from "../assets/mysql.webp";
+import sql from "../assets/sql.webp";
+import jquery from "../assets/jquery.webp";
+import github from "../assets/github.webp";
+import gitlab from "../assets/gitlab.webp";
 const Skills = () => {
   const skillsets = [
     { name: "HTML", image: html },
@@ -51,7 +51,7 @@ const Skills = () => {
       <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
         {skillsets.map((skill) => (
           <div key={skill.name} className="bg-gradient-to-br from-orange-100 to-orange-400 transition-all duration-300 ease-in-out rounded-md p-4 text-center hover:bg-orange-300">
-            <img src={skill.image} alt="logo" className="w-20 mx-auto object-cover" />
+            <img src={skill.image} alt="logo" className="w-20 mx-auto object-cover" loading="lazy" decoding="async" />
             <p className="text-center text-orange-900 font-bold mt-2">{skill.name}</p>
           </div>
         ))}
