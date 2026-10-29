@@ -80,35 +80,65 @@ export default function CaseStudyGrid() {
                 </div>
               </div>
 
-              {/* Dynamic Interactive Preview Canvas */}
+              {/* Dynamic Interactive Preview Canvas — unique per project */}
               <div className={`mockup-canvas canvas-${project.mockupType}`}>
-                {project.mockupType === "browser" && (
+
+                {/* ── Stylay: Fashion E-Commerce browser mockup ── */}
+                {project.id === "stylay" && (
                   <div className="preview-browser-content">
                     <div className="browser-nav-mock">
-                      <div className="mock-logo">EventHub.ng</div>
+                      <div className="mock-logo">Stylay.</div>
                       <div className="mock-nav-links">
-                        <span className="active">Discover</span>
-                        <span>Tickets</span>
-                        <span>My Passes</span>
+                        <span className="active">Shop</span>
+                        <span>Collections</span>
+                        <span>Lookbook</span>
                       </div>
-                      <div className="mock-btn">Get Ticket</div>
+                      <div className="mock-btn">Checkout</div>
                     </div>
                     <div className="browser-hero-mock">
-                      <div className="mock-badge">LIVE EVENT TICKETING</div>
-                      <h4>Lagos Tech Summit 2026</h4>
-                      <p>Instant QR Verification &bull; Multi-tier Access</p>
+                      <div className="mock-badge">PREMIUM FASHION</div>
+                      <h4>New Arrivals — SS 2025</h4>
+                      <p>Fast Shipping &bull; Secure Checkout &bull; Easy Returns</p>
                       <div className="mock-ticket-card">
                         <div className="ticket-left">
-                          <span className="ticket-tier">VIP PASS #0482</span>
-                          <span className="ticket-event">Main Stage Access</span>
+                          <span className="ticket-tier">FEATURED ITEM</span>
+                          <span className="ticket-event">Oversized Linen Blazer — ₦24,000</span>
                         </div>
-                        <div className="ticket-qr">QR CODE</div>
+                        <div className="ticket-qr" style={{fontSize:"0.6rem", letterSpacing:"0.5px"}}>ADD&nbsp;TO&nbsp;CART</div>
                       </div>
                     </div>
                   </div>
                 )}
 
-                {project.mockupType === "dashboard" && (
+                {/* ── store_hive: Flutter E-Commerce mobile mockup ── */}
+                {project.id === "ecommerce-mobile" && (
+                  <div className="preview-phone-mock">
+                    <div className="phone-screen">
+                      <div className="phone-notch">
+                        <span className="speaker" />
+                        <span className="camera" />
+                      </div>
+                      <div className="phone-app-header">
+                        <div className="phone-avatar" />
+                        <span>StoreHive</span>
+                        <div className="phone-badge">Cart (3)</div>
+                      </div>
+                      <div className="phone-featured-card">
+                        <span className="phone-tag">Best Seller</span>
+                        <h5>Ankara Print Jacket</h5>
+                        <div className="phone-rating">★ 4.8 · ₦18,500</div>
+                      </div>
+                      <div className="phone-quick-actions">
+                        <div className="action-pill active">All</div>
+                        <div className="action-pill">Men</div>
+                        <div className="action-pill">Women</div>
+                      </div>
+                    </div>
+                  </div>
+                )}
+
+                {/* ── e-commerce API: REST API dashboard mockup ── */}
+                {project.id === "ecommerce-api" && (
                   <div className="preview-dashboard-content">
                     <div className="dash-sidebar-mock">
                       <div className="dash-icon active" />
@@ -117,16 +147,16 @@ export default function CaseStudyGrid() {
                     </div>
                     <div className="dash-main-mock">
                       <div className="dash-header-mock">
-                        <span>StoreHive Analytics</span>
+                        <span>E-Commerce API</span>
                         <span className="dash-status">API: 200 OK</span>
                       </div>
                       <div className="dash-stat-row">
                         <div className="dash-card">
-                          <span className="dash-label">Active Orders</span>
+                          <span className="dash-label">Orders / day</span>
                           <span className="dash-num">1,248</span>
                         </div>
                         <div className="dash-card highlight">
-                          <span className="dash-label">Inventory Sync</span>
+                          <span className="dash-label">Uptime</span>
                           <span className="dash-num">99.8%</span>
                         </div>
                       </div>
@@ -142,7 +172,8 @@ export default function CaseStudyGrid() {
                   </div>
                 )}
 
-                {project.mockupType === "mobile" && (
+                {/* ── ChurchPorch: Church management mobile mockup ── */}
+                {project.id === "churchporch" && (
                   <div className="preview-phone-mock">
                     <div className="phone-screen">
                       <div className="phone-notch">
@@ -151,18 +182,37 @@ export default function CaseStudyGrid() {
                       </div>
                       <div className="phone-app-header">
                         <div className="phone-avatar" />
-                        <span>Discovaa</span>
-                        <div className="phone-badge">Explore</div>
+                        <span>ChurchPorch</span>
+                        <div className="phone-badge">Live</div>
                       </div>
                       <div className="phone-featured-card">
-                        <span className="phone-tag">Trending Place</span>
-                        <h5>Heritage Art Gallery</h5>
-                        <div className="phone-rating">★ 4.9 (120 reviews)</div>
+                        <span className="phone-tag">Sunday Service</span>
+                        <h5>Morning Devotion</h5>
+                        <div className="phone-rating">🎵 Choir · Sermon · Donations</div>
                       </div>
                       <div className="phone-quick-actions">
-                        <div className="action-pill active">All</div>
-                        <div className="action-pill">Eats</div>
-                        <div className="action-pill">Events</div>
+                        <div className="action-pill active">Programs</div>
+                        <div className="action-pill">Give</div>
+                        <div className="action-pill">Sermons</div>
+                      </div>
+                    </div>
+                  </div>
+                )}
+
+                {/* ── Fallback for any other mockup types ── */}
+                {!["stylay","ecommerce-mobile","ecommerce-api","churchporch"].includes(project.id) && (
+                  <div className="preview-dashboard-content">
+                    <div className="dash-sidebar-mock">
+                      <div className="dash-icon active" /><div className="dash-icon" /><div className="dash-icon" />
+                    </div>
+                    <div className="dash-main-mock">
+                      <div className="dash-header-mock">
+                        <span>{project.title}</span>
+                        <span className="dash-status">Live</span>
+                      </div>
+                      <div className="dash-chart-mock">
+                        <div className="bar b1" /><div className="bar b2" /><div className="bar b3" />
+                        <div className="bar b4" /><div className="bar b5" /><div className="bar b6" />
                       </div>
                     </div>
                   </div>
